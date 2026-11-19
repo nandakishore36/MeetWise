@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MeetWise | User Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/dashboard.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <div class="brand">
+            <div class="brand-icon">M</div>
+            <h2>MeetWise</h2>
+        </div>
+
+        <div class="nav-actions">
+            <span id="userWelcome">Welcome</span>
+            <button type="button" class="logout-btn" id="logoutBtn">
+                Logout
+            </button>
+        </div>
+
+    </header>
+
+    <main class="dashboard-container">
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+
+            <div>
+                <p class="eyebrow">MEETING MANAGEMENT</p>
+
+                <h1>Welcome to MeetWise</h1>
+
+                <p>
+                    Find the right space for your next meeting.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Room Availability Search -->
+        <section class="search-section">
+
+            <div class="section-heading">
+
+                <h2>Find Available Rooms</h2>
+
+                <p>
+                    Enter your meeting requirements to find suitable rooms.
+                </p>
+
+            </div>
+
+            <form id="availabilityForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="meetingDate">
+                            Meeting Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="meetingDate"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="startTime">
+                            Start Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="startTime"
+                            min="10:00"
+                            max="15:30"
+                            step="1800"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="endTime">
+                            End Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="endTime"
+                            min="10:30"
+                            max="16:00"
+                            step="1800"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="attendees">
+                            Number of Attendees
+                        </label>
+
+                        <input
+                            type="number"
+                            id="attendees"
+                            min="1"
+                            placeholder="Enter attendees"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="facilities">
+                            Required Facilities
+                        </label>
+
+                        <input
+                            type="text"
+                            id="facilities"
+                            placeholder="Example: Wi-Fi, Projector"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    id="searchRoomsBtn">
+
+                    Search Available Rooms
+
+                </button>
+
+            </form>
+
+
+            <p
+                id="availabilityMessage"
+                class="message"
+                aria-live="polite">
+            </p>
+
+        </section>
+
+
+        <!-- Available Rooms -->
+        <section class="results-section">
+
+            <div class="section-heading">
+
+                <h2>Available Rooms</h2>
+
+                <p>
+                    Rooms matching your meeting requirements.
+                </p>
+
+            </div>
+
+
+            <div id="roomResults" class="room-grid">
+
+                <p class="empty-message">
+                    Search for rooms to see availability.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="bookBestRoomBtn"
+                class="primary-btn"
+                hidden>
+
+                Confirm & Book Best-Fit Room
+
+            </button>
+
+
+            <p
+                id="bookingMessage"
+                class="message"
+                aria-live="polite">
+            </p>
+
+        </section>
+
+
+        <!-- Team Booking History -->
+        <section class="bookings-section">
+
+            <div class="section-heading">
+
+                <h2>Team Booking History</h2>
+
+                <p>
+                    View your team's meeting reservations.
+                </p>
+
+            </div>
+
+
+            <div id="bookingResults">
+
+                <p class="empty-message">
+                    Loading bookings...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            MeetWise &copy; 2026. Smart spaces. Better meetings.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

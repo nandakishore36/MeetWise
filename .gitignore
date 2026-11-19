@@ -1,0 +1,21 @@
+# Eclipse generated files
+.metadata/
+.settings/
+
+# Compiled files
+build/
+*.class
+
+# Server generated files
+Servers/
+
+# Logs
+*.log
+
+# Sensitive credentials
+.env
+connection.properties
+
+# OS files
+.DS_Store
+Thumbs.db

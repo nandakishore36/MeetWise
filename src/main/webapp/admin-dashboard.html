@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetWise | Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <script src="js/admin-dashboard.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">M</div>
+            <h2>MeetWise</h2>
+        </div>
+
+        <div class="admin-info">
+            <span>Administrator</span>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome-section">
+            <p class="eyebrow">ADMINISTRATION</p>
+            <h1>Admin Dashboard</h1>
+            <p>Manage meeting rooms, teams and users from one place.</p>
+        </section>
+
+        <!-- Room Management -->
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Room Management</h2>
+                    <p>Add and manage meeting rooms.</p>
+                </div>
+            </div>
+
+            <form id="roomForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="roomName">Room Name</label>
+                        <input type="text" id="roomName"
+                               placeholder="Example: Room A" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="capacity">Capacity</label>
+                        <input type="number" id="capacity"
+                               min="1" placeholder="Enter capacity" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location"
+                               placeholder="Enter location" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="facilities">Facilities</label>
+                        <input type="text" id="facilities"
+                               placeholder="Wi-Fi, Projector" required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="primary-btn">Add Room</button>
+                <p id="roomMessage" class="message"></p>
+
+            </form>
+
+            <div class="table-container">
+                <h3>Existing Rooms</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Room</th>
+                            <th>Capacity</th>
+                            <th>Location</th>
+                            <th>Facilities</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="roomTableBody">
+                        <tr>
+                            <td colspan="7">Loading rooms...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Team Management -->
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Team Management</h2>
+                    <p>Create and view organization teams.</p>
+                </div>
+            </div>
+
+            <form id="teamForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="teamName">Team Name</label>
+                        <input type="text" id="teamName"
+                               placeholder="Enter team name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input type="text" id="department"
+                               placeholder="Enter department" required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="primary-btn">Add Team</button>
+                <p id="teamMessage" class="message"></p>
+
+            </form>
+
+            <div class="table-container">
+                <h3>Existing Teams</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Team ID</th>
+                            <th>Team Name</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="teamTableBody">
+                        <tr>
+                            <td colspan="3">Loading teams...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- User Management -->
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>User Management</h2>
+                    <p>Register Employees and Team Leads.</p>
+                </div>
+            </div>
+
+            <form id="userForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Temporary Password</label>
+                        <input type="password" id="password"
+                               minlength="8" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">User Role</label>
+                        <select id="role" required>
+                            <option value="">Select Role</option>
+                            <option value="TEAM_LEAD">Team Lead</option>
+                            <option value="EMPLOYEE">Employee</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userTeam">Team ID</label>
+                        <input type="number" id="userTeam"
+                               min="1" placeholder="Enter team ID">
+                    </div>
+
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    Register User
+                </button>
+
+                <p id="userMessage" class="message"></p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>MeetWise &copy; 2026. Administration Portal.</p>
+    </footer>
+
+</body>
+</html>

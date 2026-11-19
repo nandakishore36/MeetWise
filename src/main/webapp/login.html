@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetWise | Login</title>
+
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/login.js" defer></script>
+</head>
+<body>
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <div class="brand">
+                <div class="brand-icon">M</div>
+                <h1>MeetWise</h1>
+            </div>
+
+            <h2>Welcome Back</h2>
+
+            <p class="subtitle">
+                Sign in to manage your meeting spaces.
+            </p>
+
+            <p id="loginMessage" class="login-message"></p>
+
+            <form action="login" method="post" id="loginForm">
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required>
+                </div>
+
+                <button type="submit" class="login-button">
+                    Sign In
+                </button>
+
+            </form>
+
+            <p class="register-link">
+                New employee?
+                <a href="register.html">Register here</a>
+            </p>
+
+            <p class="footer-text">
+                Smart spaces. Better meetings.
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
